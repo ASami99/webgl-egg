@@ -125,10 +125,10 @@ function init() {
 function initEggMaterialAndTextures() {
   const loader = new THREE.TextureLoader()
 
-  texture1 = loader.load('assets/novo/Egg-Diffuse2.png')
-  texture2 = loader.load('assets/novo/Egg-Diffuse1Neon2.png')
-  texture3 = loader.load('assets/novo/Egg-Diffuse3Neon3.png')
-  normalMap = loader.load('assets/novo/egg-Normal.png')
+  texture1 = loader.load('/assets/novo/Egg-Diffuse2.png')
+  texture2 = loader.load('/assets/novo/Egg-Diffuse1Neon2.png')
+  texture3 = loader.load('/assets/novo/Egg-Diffuse3Neon3.png')
+  normalMap = loader.load('/assets/novo/egg-Normal.png')
 
   ;[texture1, texture2, texture3, normalMap].forEach(tex => {
     tex.wrapS = tex.wrapT = THREE.RepeatWrapping
@@ -176,7 +176,7 @@ function initEggMaterialAndTextures() {
 
 function loadEgg() {
   const loader = new GLTFLoader()
-  loader.load('assets/novo/glancnovojaje.glb', glb => {
+  loader.load('/assets/novo/glancnovojaje.glb', glb => {
     eggRoot = glb.scene
 
     eggRoot.traverse(obj => {
@@ -764,7 +764,7 @@ function updateParticles(delta) {
 
 function loadDNAPlane() {
   const loader = new THREE.TextureLoader()
-  const dnaTex = loader.load('assets/novo/dnanana5.png')
+  const dnaTex = loader.load('/assets/novo/dnanana5.png')
 
   dnaTex.encoding = THREE.sRGBEncoding
   dnaTex.center.set(0.5, 0.5)
